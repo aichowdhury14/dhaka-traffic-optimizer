@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.parquet
+*.db
+*.sqlite
+.ipynb_checkpoints/
+cache/
+
+# web/ has its own .gitignore for node_modules, .next, etc.
