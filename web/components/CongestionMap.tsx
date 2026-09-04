@@ -10,9 +10,13 @@ import { useState } from "react";
 const DHAKA_CENTER: [number, number] = [90.4125, 23.8103];
 
 const MAPTILER_KEY = process.env.NEXT_PUBLIC_MAPTILER_KEY;
+// CARTO's dark-matter style is free, keyless, and renders real streets/labels -
+// used as the no-config default so the map looks right without any setup.
+// MapTiler (if a key is configured) is a sharper-looking upgrade, not a
+// requirement.
 const STYLE_URL = MAPTILER_KEY
   ? `https://api.maptiler.com/maps/streets-v2-dark/style.json?key=${MAPTILER_KEY}`
-  : "https://demotiles.maplibre.org/style.json";
+  : "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
 function congestionColor(factor: number): string {
   // 1.0 (free flow) -> green, ~2.0+ (heavy) -> red
